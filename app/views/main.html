@@ -1,0 +1,48 @@
+<nav class="notes-nav">
+    <div class="nav-bar-filter">
+        <div ng-repeat="color in colors" class="col-xs-1 col-sm-1">
+            <button class="notes-sm" ng-class="color.style" ng-click="filter.filterByColor(color.style)">
+                <i class="fa fa-check-square-o" ng-show="colorsFilter.length == 0 || colorsFilter.indexOf(color.style) != -1"></i>
+                <i class="fa fa-square-o" ng-show="colorsFilter.length > 0 && colorsFilter.indexOf(color.style) == -1"></i>
+            </button>
+        </div>
+        <div class="col-xs-1 col-sm-1">
+            <button class="notes-sm notes-button-sm"><i class="fa fa-paperclip"></i></i></button>
+        </div>
+         <div class="col-xs-1 col-sm-1">
+            <button class="notes-sm notes-button-sm"><i class="fa fa-sort-alpha-desc"></i></button>
+        </div>
+         <div class="col-xs-1 col-sm-1">    
+            <button class="notes-sm notes-button-sm"><i class="fa fa-sort-alpha-asc"></i></button>
+        </div>
+    </div>
+</nav>
+
+<div ng-click="actions.addNote()">AÑADIR</div>
+
+<section class="container-fluid notes-container">
+    <article ng-repeat="note in qNotes.notes" class="notes-md col-xs-6" ng-class="note.color" ng-show="colorsFilter.length == 0 || colorsFilter.indexOf(note.color) != -1">
+        <header>
+            <h5 class="font-header">{{note.title}}</h5>
+        <header>
+        <div class="main-container font-content">
+            {{note.text}}
+        </div>
+        <footer>
+            <nav class="row">
+                <div class="notes-button col-xs-3">
+                    <i class="fa fa-eye" ng-click="actions.viewNote(note)"></i>
+                </div>
+                <div class="notes-button col-xs-3">
+                    <i class="fa fa-pencil" ng-click="actions.editNote(note)"></i>
+                </div>
+                <div class="notes-button col-xs-3" ng-class="{'disabled':!note.stick}">
+                    <i class="fa fa-paperclip"></i>
+                </div>
+                <div class="notes-button col-xs-3">
+                    <i class="fa fa-trash"></i>
+                </div>
+            </nav>
+        </footer>
+    </article>
+</section>

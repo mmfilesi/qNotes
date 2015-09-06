@@ -1,0 +1,355 @@
+.browsehappy {
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
+}
+
+body {
+  padding: 0;
+}
+
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header,
+.marketing,
+.footer {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* Custom page header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+/* Make the masthead heading the same height as the navigation */
+.header h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  padding-bottom: 19px;
+}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: center;
+  border-bottom: 1px solid #e5e5e5;
+}
+.jumbotron .btn {
+  font-size: 21px;
+  padding: 14px 24px;
+}
+
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 730px;
+  }
+
+  /* Remove the padding we set earlier */
+  .header,
+  .marketing,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Space out the masthead */
+  .header {
+    margin-bottom: 30px;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}
+
+/* ============================
+  Notes 
+=============================== */
+
+    @font-face {
+        font-family: 'headers';
+        src: url('trocchi-regular-webfont.eot');
+        src: url('trocchi-regular-webfont.eot?#iefix') format('embedded-opentype'),
+             url('trocchi-regular-webfont.woff') format('woff'),
+             url('trocchi-regular-webfont.ttf') format('truetype'),
+             url('trocchi-regular-webfont.svg#trocchiregular') format('svg');
+        font-weight: normal;
+        font-style: normal;
+    }
+
+
+    @font-face {
+        font-family: 'notes';
+        src: url('ubuntu-medium-webfont.eot');
+        src: url('ubuntu-medium-webfont.eot?#iefix') format('embedded-opentype'),
+             url('ubuntu-medium-webfont.woff2') format('woff2'),
+             url('ubuntu-medium-webfont.woff') format('woff'),
+             url('ubuntu-medium-webfont.ttf') format('truetype'),
+             url('ubuntu-medium-webfont.svg#ubuntumedium') format('svg');
+        font-weight: normal;
+        font-style: normal;
+
+    }
+
+    html, body {
+        height: 100%;
+    }
+
+    body {
+       background:#fdfcfd;
+    }
+
+   .wrap {
+        max-width: 1024px;
+        max-height: 768px;
+        margin: 0 auto;
+    } 
+
+    .notes-header {
+        height: 5em;
+        background-color: #f7f9fe;
+        border-bottom: 5px solid #f2f2f2;
+        vertical-align: middle;        
+    }
+
+    .notes-header h1 {
+        color: #bed2d9;
+        font-family: 'headers', verdana, arial;
+    }
+
+    .notes-nav {
+        margin-top: 1em;
+        padding-bottom: 1em;
+        border-bottom: 2px solid #f2f2f2;
+       /* height: 65px; */
+       /* min-width: 500px; */
+        overflow-x: auto;
+        overflow-y: hidden;       
+    }
+
+    .nav-bar-filter {
+        width: 964px;
+    }
+
+   /* .notes-nav .search-note {
+        width: 150px;
+        float: right;
+    } */
+
+    .notes-footer {
+        height: 5em;
+        background-color: #dce8eb;
+        border-top: 3px solid #cbdbe0;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+
+    .notes-container {
+        overflow-x:hidden;
+        overflow-y:auto;
+        margin-top: 1em;
+    }
+
+    @media screen and (max-height:1024px){
+        .notes-container {
+            max-height: 850px;
+        }
+    }
+
+    @media screen and (max-height:768px){
+        .notes-container {
+            max-height: 650px;
+        }
+    }
+
+    @media screen and (max-height:650px){
+        .notes-container {
+            max-height: 500px;
+        }
+    }
+
+     @media screen and (max-height:500px){
+        .notes-container {
+            max-height: 350px;
+        }
+    } 
+
+    .notes-sm {
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        margin: 0.1em 0.5em;
+        font-size: 24px;
+    }
+
+    .notes-button-sm {
+        border-top: 1px solid #efefef;
+        border-left: 1px solid #efefef;
+        border-right: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        background: #ededed;
+    }             
+
+    .notes-md {
+        width: 300px;
+        height: 300px;
+        border-radius: 1em;
+        padding: 10px;
+        overflow: hidden;
+        margin: 0.1em;
+        color: #000 !important;
+    }
+
+    .notes-md h5 {   
+        font-size: 1.7em;
+        font-weight: bold;
+        text-align: center;
+        height: 30px;
+        text-overflow:ellipsis;
+        white-space:nowrap; 
+        overflow: hidden;
+    }
+
+    .notes-md .main-container {
+        font-size: 1.5em;
+        margin: 10px 20px;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    .notes-md .notes-button {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .disabled {
+        opacity: 0.3;
+    }
+
+    .notes-md nav {
+        padding-top: 0.2em;
+        width:100%;
+        margin:0 auto;
+        text-align: center;
+    }
+
+    /* colors */    
+    .notes-c-yw {
+        /* color: #f1dd65; */
+        border-top: 1px solid #f6f5ec;
+        border-left: 1px solid #f6f5ec;
+        border-bottom: 1px solid #f1dd65;
+        border-right: 1px solid #f1dd65;
+        background: #f2ecc8;
+    }
+    
+    .notes-c-rd {
+       /*  color: #eda750; */
+        border-top: 1px solid #f2e2cd;
+        border-left: 1px solid #f2e2cd;
+        border-bottom: 1px solid #eda750;
+        border-right: 1px solid #eda750;
+        background: #f4e4d0;
+    }
+
+    .notes-c-br {
+        /* color: #a89482; */
+        border-top: 1px solid #f5e6d8;
+        border-left: 1px solid #f5e6d8;
+        border-bottom: 1px solid #a89482;
+        border-right: 1px solid #a89482;
+        background: #dfd3c8;
+    }
+
+    .notes-c-pk {
+        /* color: #df95f1;*/
+        border-top: 1px solid #f5e5f9;
+        border-left: 1px solid #f5e5f9;
+        border-bottom: 1px solid #df95f1;
+        border-right: 1px solid #df95f1;
+        background: #e9e1eb;
+    }
+
+    .notes-c-vl {
+        /* color: #9562c0; */
+        border-top: 1px solid #e2dbe7;
+        border-left: 1px solid #e2dbe7;
+        border-bottom: 1px solid #9562c0;
+        border-right: 1px solid #9562c0;
+        background: #c8a8e3;
+    }     
+    
+    .notes-c-gr {
+       /*  color: #83b2a7; */
+        border-top: 1px solid #e2f6f1;
+        border-left: 1px solid #e2f6f1;
+        border-bottom: 1px solid #83b2a7;
+        border-right: 1px solid #83b2a7;
+        background: #d8eee9;
+    }
+
+    .notes-c-gd {
+       /*  color:#86a184; */
+        border-top: 1px solid #dee3de;
+        border-left: 1px solid #dee3de;
+        border-bottom: 1px solid #86a184;
+        border-right: 1px solid #86a184;
+        background: #cedacd;
+    }
+    
+    .notes-c-bl {
+       /*  color:#92c1e1; */
+        border-top: 1px solid #e0ecf5;
+        border-left: 1px solid #e0ecf5;
+        border-bottom: 1px solid #92c1e1;
+        border-right: 1px solid #92c1e1;
+        background: #d0e0eb;
+    }
+
+    .notes-c-bd {
+       /*  color:#5d91aa; */
+        border-top: 1px solid #c7dde7;
+        border-left: 1px solid #c7dde7;
+        border-bottom: 1px solid #5d91aa;
+        border-right: 1px solid #5d91aa;
+        background: #bfd2db;
+    }
+
+    .font-header {
+        font-family: 'headers', verdana, arial;
+    }
+
+    .font-content {
+        font-family: 'notes', verdana, arial;
+    }
+
+    .font-bold {
+        font-weight: bold;
+    }
+
+    .formNotes {
+        width: 90%;
+        margin: 0 5%;
+        min-height: 150px;
+    }

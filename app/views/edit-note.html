@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h3 class="modal-title font-header font-bold">
+    	<span ng-if="mode != 'add'">{{note.title}}</span>
+    	<span ng-if="mode == 'add'">{{ 'ADD_NOTE' | translate }}</span>
+    </h3>
+</div>
+<div class="modal-body font-content">
+	<div ng-if="mode == 'view'">
+   		{{note.text}}
+   	</div>
+   	<div ng-if="mode != 'view'" class="formNotes">
+   		<div class="row">
+   			<div class="col-xs-2">
+   				<input type="text" ng-model="formNotes.title" class="form-control" placeholder="{{ 'TITLE' | translate }}">
+   			</div>
+   			<div class="col-xs-2">
+   				<input type="text" ng-model="formNotes.color" class="form-control">
+   			</div>
+   		</div>
+   		<textarea ng-model="formNotes.text" class="form-control" placeholder="{{ 'NOTE' | translate }}">{{note.text}}</textarea>
+   	</div>
+</div>
+<div class="modal-footer font-content">    
+    <button ng-if="mode != 'view'" class="btn btn-warning" type="button" ng-click="actions.cancel()">{{ 'CANCEL' | translate }}</button>
+    <button class="btn btn-primary" type="button" ng-click="actions.accept()">{{ 'ACCEPT' | translate }}</button>
+</div>
