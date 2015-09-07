@@ -13,15 +13,6 @@ angular.module('qNotes')
 	    $scope.note = data.note;
 	    $scope.mode = data.mode;
 
-	   	if ( $scope.mode != "view" ) {
-    	    $scope.formNotes = {};
-    		$scope.formNotes.title 	= $scope.note.title || "";
-    		$scope.formNotes.text 	= $scope.note.text || "";
-    		$scope.formNotes.color 	= $scope.note.color || "notes-c-yw";
-    		$scope.formNotes.stick 	= $scope.note.stick || false;
-    		$scope.formNotes.id 	= $scope.note.id || Date.now();
-    	}
-
 	    $scope.actions = {
 	    	accept: function() {
 	    		if ( $scope.mode === "add" ) {
@@ -40,7 +31,19 @@ angular.module('qNotes')
 
 	    var init = {
 	    	initAll: function() {
+	    		if ( $scope.mode != "view" ) {
+	    			$timeout(function() {
+			    	    $scope.formNotes = {};
+			    		$scope.formNotes.title 	= $scope.note.title || "";
+			    		$scope.formNotes.text 	= $scope.note.text || "";
+			    		$scope.formNotes.color 	= $scope.note.color || "notes-c-yw";
+			    		$scope.formNotes.stick 	= $scope.note.stick || false;
+			    		$scope.formNotes.id 	= $scope.note.id || Date.now();
+			    	}, 200);
+		    	}
 	    	}
 	    };
+
+	    init.initAll();
 
   	});
