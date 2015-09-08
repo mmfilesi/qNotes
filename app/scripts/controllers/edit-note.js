@@ -30,16 +30,18 @@ angular.module('qNotes')
 	    };
 
 	    var init = {
+	    	initDataForm: function() {
+	    	    $scope.formNotes = {};
+	    		$scope.formNotes.title 	= $scope.note.title || "";
+	    		$scope.formNotes.text 	= $scope.note.text || "";
+	    		$scope.formNotes.color 	= $scope.note.color || "notes-c-yw";
+	    		$scope.formNotes.stick 	= $scope.note.stick || false;
+	    		$scope.formNotes.id 	= $scope.note.id || Date.now();	    		
+	    	},
+
 	    	initAll: function() {
 	    		if ( $scope.mode != "view" ) {
-	    			$timeout(function() {
-			    	    $scope.formNotes = {};
-			    		$scope.formNotes.title 	= $scope.note.title || "";
-			    		$scope.formNotes.text 	= $scope.note.text || "";
-			    		$scope.formNotes.color 	= $scope.note.color || "notes-c-yw";
-			    		$scope.formNotes.stick 	= $scope.note.stick || false;
-			    		$scope.formNotes.id 	= $scope.note.id || Date.now();
-			    	}, 200);
+	    			this.initDataForm();
 		    	}
 	    	}
 	    };

@@ -4,28 +4,64 @@
  * @name qNotes.services:utils
  */
 angular.module('qNotes')
-	.directive('qnColorPicker', function () {
+	.directive('qnColorPicker', function (utils) {
 		return {
 			restrict: 'E',
 			replace: true,
 			/*scope: {
-				model: '=ngModel'
+				colors: '='
 			},*/
 			require: "ngModel",
 			templateUrl: "../views/directives/qn-color-picker.html",
 		    link: function(scope, el, attr, ngModelCtrl) {
+
+		    	if (!ngModelCtrl) {
+                    return; 
+		    	}
+
+		    	console.log(scope)
+		    	console.log(ngModelCtrl)
 		    	
-		    	scope.colorSelected = "";
-		     	console.log(ngModelCtrl)
-		     	scope.$watch(
-                    "ngModelCtrl.$viewValue",
-                    function setColor( newValue, oldValue ) {
-                    	console.log(newValue, oldValue )
-                        if ( newValue && newValue != oldValue ) {
-                        	scope.colorSelected = ngModelCtrl.$viewValue;
-                        }
-                    }
-                );
+		    	scope.allColors 	= utils.getColors();
+		    	scope.colorSelected = {};
+		    	scope.colorSelected.color = ngModelCtrl.$viewValue;
+
+		     	console.log(ngModelCtrl);
+
+              	scope.actions = {
+                	closeModal: function() {                		
+		     			scope.showColors = false;
+		     		},
+
+		     		setColor: function(color) {
+		     			scope.colorSelected.color = color;
+		     			ngModelCtrl.$setViewValue(color);
+		     			this.closeModal();
+		     		}
+                };
+
+                var bindings = {
+                	bind: function() {
+                		angular.element('.modal-dialog').click(scope.actions.closeModal);
+
+                	},
+
+                	unbind: function() {
+				     	scope.$on('$destroy', function(e) {
+						 	angular.element('.modal-dialog').unbind('click', scope.actions.closeModal);
+						});
+                	}
+                	
+                }
+
+                var init = {
+                	initAll: function() {
+                		bindings.bind();
+                		bindings.unbind();                		
+                	}
+                };
+
+                init.initAll();
 
 		    }
 		}

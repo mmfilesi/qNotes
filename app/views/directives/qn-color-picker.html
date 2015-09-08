@@ -1,4 +1,19 @@
 <div>
-    <!--<input type='hidden' class='form-control' ng-class='{{colorSelected}}'/>-->
-    <input type='text' class='form-control' maxlength="10" ng-class='{{colorSelected}}'/>
+    <input type='hidden' class='form-control' ng-model='colorSelected.color'/>
+    <input 
+        type='text' 
+        class='form-control {{colorSelected.color}}'
+        maxlength="0"  
+        ng-click="showColors =!showColors; $event.stopPropagation();" />
+{{colorSelected.color}}
+    <div ng-show="showColors" class="sub-panel-standar" ng-init="showColors=false" ng-blur="showColors=false">
+        <button 
+            ng-repeat="color in allColors"
+            class="notes-color-button display-inline" 
+            ng-class="color.style" 
+            ng-click="actions.setColor(color.style); $event.stopPropagation();">
+            <i class="fa fa-check-square-o" ng-show="colorSelected == color.style"></i>           
+       </button>
+    </div>
+
 </div>

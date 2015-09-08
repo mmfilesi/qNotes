@@ -353,3 +353,30 @@ body {
         margin: 0 5%;
         min-height: 150px;
     }
+
+  .sub-panel-standar { 
+    width: 145px;
+    height: 145px;
+    background-color: #fff;
+    border-top: 1px solid #ededed;
+    border-left: 1px solid #ededed;
+    border-bottom: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    position: absolute;
+    z-index: 5;
+    padding: 0.2em;
+    border-radius: 0.4em;
+    top: 3px;
+    left: 18px;
+    text-align: center;
+}
+
+.display-inline {
+    display: inline-block;
+}
+
+.notes-color-button {
+    width: 40px;
+    height: 40px;
+    margin: 0.2em;
+}    
